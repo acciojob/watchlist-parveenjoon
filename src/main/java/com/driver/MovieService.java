@@ -10,7 +10,7 @@ import java.util.List;
 public class MovieService {
 
     @Autowired
-    MovieRepository movieRepository;
+    private MovieRepository movieRepository;
 
     public void addMovie(Movie movie) {
         movieRepository.saveMovie(movie);
