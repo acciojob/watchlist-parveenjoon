@@ -7,9 +7,6 @@ public class Director {
     private int numberOfMovies;
     private double imdbRating;
 
-    public Director() {
-    }
-
     public Director(String name, int numberOfMovies, double imdbRating) {
         this.name = name;
         this.numberOfMovies = numberOfMovies;
@@ -38,5 +35,14 @@ public class Director {
 
     public void setImdbRating(double imdbRating) {
         this.imdbRating = imdbRating;
+    }
+    // Override toString method for better logging or debugging
+    @Override
+    public String toString() {
+        return "Director{" +
+                "name='" + name + '\'' +
+                ", numberOfMovies=" + numberOfMovies +
+                ", imdbRating=" + imdbRating +
+                '}';
     }
 }
