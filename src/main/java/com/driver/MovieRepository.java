@@ -3,16 +3,14 @@ package com.driver;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class MovieRepository {
 
-    private HashMap<String, Movie> movieMap = new HashMap<>();
-    private HashMap<String, Director> directorMap = new HashMap<>();
-    private HashMap<String, List<String>> directorMovieMapping = new HashMap<>();
+    private final Map<String, Movie> movieMap = new HashMap<>();
+    private final Map<String, Director> directorMap = new HashMap<>();
+    private final Map<String, List<String>> directorMovieMapping = new HashMap<>();
 
     public void saveMovie(Movie movie) {
         movieMap.put(movie.getName(), movie);
@@ -35,7 +33,7 @@ public class MovieRepository {
     }
 
     public List<String> findMoviesFromDirector(String director) {
-        return directorMovieMapping.getOrDefault(director, new ArrayList<>());
+        return directorMovieMapping.getOrDefault(director, Collections.emptyList());
     }
 
     public List<String> findAllMovies() {
